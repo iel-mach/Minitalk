@@ -6,21 +6,21 @@
 /*   By: iel-mach <iel-mach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 15:08:59 by iel-mach          #+#    #+#             */
-/*   Updated: 2021/12/15 22:33:15 by iel-mach         ###   ########.fr       */
+/*   Updated: 2021/12/16 23:41:48 by iel-mach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-void ft_send(pid_t pid, char c)
+void	ft_send(pid_t pid, char c)
 {
-	int b;
-	int i;
+	int	b;
+	int	i;
 
 	i = 7;
 	while (i >= 0)
 	{
-		b =  ((c >> i) & 1);
+		b = ((c >> i) & 1);
 		if (b == 1)
 			kill(pid, SIGUSR2);
 		else
@@ -30,7 +30,7 @@ void ft_send(pid_t pid, char c)
 	}
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	int		i;
 	pid_t	pid;
