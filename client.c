@@ -6,7 +6,7 @@
 /*   By: iel-mach <iel-mach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 15:08:59 by iel-mach          #+#    #+#             */
-/*   Updated: 2021/12/16 23:41:48 by iel-mach         ###   ########.fr       */
+/*   Updated: 2021/12/21 00:01:19 by iel-mach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_send(pid_t pid, char c)
 			kill(pid, SIGUSR2);
 		else
 			kill(pid, SIGUSR1);
-		usleep(50);
+		usleep(100);
 		i--;
 	}
 }
